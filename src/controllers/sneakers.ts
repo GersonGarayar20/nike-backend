@@ -1,8 +1,13 @@
 import { Request, Response } from 'express'
-import { listSneakers, getSneakerById, addSneaker, updateSneaker, deleteSneaker } from '../models/mongo/sneakers'
+import { listSneakers, getSneakerById, addSneaker, updateSneaker, deleteSneaker, filterSneakers } from '../models/mongo/sneakers'
 import { validateSneaker, partialValidateSneaker } from '../schemas/sneakers'
 
 export const findAll = async (req: Request, res: Response) => {
+  if (req.query !== undefined) {
+    const data = await filterSneakers(req.query)
+    return res.json({ data, message: 'find one' })
+  }
+
   const data = await listSneakers()
   res.json({ data, message: 'getAll' })
 }
@@ -15,10 +20,6 @@ export const findOne = async (req: Request, res: Response) => {
 
 export const create = async (req: Request, res: Response) => {
   const result = validateSneaker(req.body)
-
-  console.log(req.query)
-
-  res.json({ data: req.query })
 
   if (result.success) {
     const data = await addSneaker(result.data)

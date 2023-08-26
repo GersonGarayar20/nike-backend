@@ -24,8 +24,22 @@ export const listSneakers = async () => await SnearkerModel.find()
 // obtener zapatillas por id
 export const getSneakerById = async (id: any) => await SnearkerModel.findById(id)
 
-// buscar zapatillas por marca
-export const searchSneakersByBrand = async () => ''
+// buscar zapatillas por genero
+export const filterSneakers = async ({ categories, gender, minPrice, maxPrice }: any) => {
+  const obj: any = {}
+
+  if (categories !== undefined) {
+    obj.categories = categories
+  }
+  if (gender !== undefined) {
+    obj.gender = gender
+  }
+  if (minPrice !== undefined && maxPrice !== undefined) {
+    return await SnearkerModel.find({ ...obj, price: { $gte: minPrice, $lte: maxPrice } })
+  }
+
+  return await SnearkerModel.find(obj)
+}
 
 // agregar una zapatilla
 export const addSneaker = async (sneaker: any) => {
