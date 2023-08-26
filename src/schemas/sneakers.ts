@@ -7,7 +7,7 @@ const sneakerSchema = object({
   sizes: array(number()),
   gender: withDefault(enumType(['Men', 'Women']), 'Men'),
   price: number(),
-  categories: string(),
+  category: string(),
   description: string(),
   images: array(string())
 })

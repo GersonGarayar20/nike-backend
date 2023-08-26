@@ -18,7 +18,7 @@ const data = [
       11.5: 45,
       12: 50
     },
-    categories: ['Running', 'Athletic', 'Fashion'],
+    category: ['Running', 'Athletic', 'Fashion'],
     isLimitedEdition: false,
     isFavorite: false,
     description: "The Nike Air Max 90 is a timeless classic that combines style and comfort. With its iconic design and cushioned sole, it's the perfect choice for both athletic activities and everyday fashion. The White/Black colorway adds a versatile touch to any outfit.",

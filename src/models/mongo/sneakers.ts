@@ -7,7 +7,7 @@ const snearkerSchema = new Schema({
   sizes: [Number],
   gender: String,
   price: Number,
-  categories: String,
+  category: String,
   description: String,
   images: [String]
 },
@@ -25,11 +25,11 @@ export const listSneakers = async () => await SnearkerModel.find()
 export const getSneakerById = async (id: any) => await SnearkerModel.findById(id)
 
 // buscar zapatillas por genero
-export const filterSneakers = async ({ categories, gender, minPrice, maxPrice }: any) => {
+export const filterSneakers = async ({ category, gender, minPrice, maxPrice }: any) => {
   const obj: any = {}
 
-  if (categories !== undefined) {
-    obj.categories = categories
+  if (category !== undefined) {
+    obj.category = category
   }
   if (gender !== undefined) {
     obj.gender = gender
