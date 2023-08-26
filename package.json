@@ -1,0 +1,53 @@
+{
+  "name": "nike-ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "lint": "ts-standard",
+    "lint:fix": "ts-standard --fix",
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.5",
+    "dotenv": "16.3.1",
+    "express": "4.18.2",
+    "mongoose": "7.4.3",
+    "redis": "4.6.7",
+    "valibot": "0.12.0"
+  },
+  "devDependencies": {
+    "@types/cors": "2.8.13",
+    "@types/express": "4.17.17",
+    "@types/node": "20.4.9",
+    "concurrently": "8.2.0",
+    "nodemon": "3.0.1",
+    "standard": "17.1.0",
+    "ts-standard": "12.0.2",
+    "typescript": "5.1.6",
+    "vitest": "0.34.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/ts-standard/eslintrc.json"
+    ],
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-misused-promises": [
+        "error",
+        {
+          "checksVoidReturn": false
+        }
+      ]
+    }
+  }
+}
