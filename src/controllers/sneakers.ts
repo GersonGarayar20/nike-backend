@@ -3,6 +3,7 @@ import { listSneakers, getSneakerById, addSneaker, updateSneaker, deleteSneaker,
 import { validateSneaker, partialValidateSneaker } from '../schemas/sneakers'
 
 export const findAll = async (req: Request, res: Response) => {
+  // aca hay un error
   if (req.query !== undefined) {
     const data = await filterSneakers(req.query)
     return res.json({ data, message: 'find one' })

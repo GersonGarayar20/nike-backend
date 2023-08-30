@@ -5,12 +5,15 @@ import cors from 'cors'
 import { routes } from './routes'
 import { connectMongo } from './config/mongo'
 
+import responseTime from 'response-time'
+
 void connectMongo()
 
 const app = express()
 
 app.use(cors())
 app.use(express.json())
+app.use(responseTime())
 
 app.use('/api', routes)
 
