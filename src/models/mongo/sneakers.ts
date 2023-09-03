@@ -54,5 +54,5 @@ export const updateSneaker = async (id: any, sneaker: any) => {
 
 // eliminar una zapatilla
 export const deleteSneaker = async (id: any) => {
-  await SnearkerModel.findOneAndDelete({ _id: id })
+  return await SnearkerModel.findOneAndDelete({ _id: id })
 }

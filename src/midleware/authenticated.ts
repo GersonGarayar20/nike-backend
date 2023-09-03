@@ -4,7 +4,7 @@ export const isAuthenticated = (req: Request, res: Response, next: NextFunction)
   const apiKey = req.headers['api-key'] // Obtener la API key de los headers
 
   // Verificar si la API key es válida
-  const validApiKey = 'myapikey' // Cambia esto con tu API key válida
+  const validApiKey = process.env.API_KEY // Cambia esto con tu API key válida
 
   if (apiKey === validApiKey) {
     next()

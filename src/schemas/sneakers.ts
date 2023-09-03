@@ -5,7 +5,7 @@ const sneakerSchema = object({
   model: string(),
   color: string(),
   sizes: array(number()),
-  gender: withDefault(enumType(['Men', 'Women']), 'Men'),
+  gender: withDefault(enumType(['Hombre', 'Mujer']), 'Hombre'),
   price: number(),
   category: string(),
   description: string(),
