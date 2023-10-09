@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { findAll, findOne, create, update, remove } from '../controllers/sneakers'
-import { isAuthenticated } from '../midleware/authenticated'
+import { isAuthenticated } from '../middleware/authenticated'
 
 export const sneakers = Router()
 
